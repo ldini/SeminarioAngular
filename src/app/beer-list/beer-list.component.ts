@@ -11,9 +11,20 @@ import { BEERS } from './mocks';
 export class BeerListComponent implements OnInit {
   
   public cervezas: Beer[];
+  stock: any;
 
   constructor() { 
     // let c : Beer = this.cervezas(0);
+  }
+
+  public masBeer(beer){
+    console.log(beer);
+    beer.stock++;
+  }
+
+  public menosBeer(beer){
+    console.log(beer);
+    beer.stock--;
   }
 
   ngOnInit() {

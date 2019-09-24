@@ -11,10 +11,13 @@
             <tr *ngFor= "let beer of cervezas">
                 <td>{{beer.name}}</td>
                 <td>{{beer.description}}</td>
-                <td>{{beer.precio | currency:'CAD'}}</td>  <!-- ejemplo de uso de pipes -->
+                <td>{{beer.precio | currency:'CAD'}}</td> 
+                <td>{{beer.stock}}</td>  <!-- ejemplo de uso de pipes -->
                 <td>
                     <span *ngIf = "beer.stock == 0"> NO HAY</span>
                     <span *ngIf = "beer.stock != 0"> HAY</span>
+                    <button (click)="masBeer(beer)">+</button>
+                    <button (click)="menosBeer(beer)">-</button>
                 </td>
             </tr>
         </tbody>
