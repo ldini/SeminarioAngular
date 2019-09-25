@@ -1,0 +1,23 @@
+<div class="home">
+    <h1>LISTA DE CERVEZAS</h1>
+    <table>
+        <thead>  
+            <td>NOMBRE</td> 
+            <td>TIPO</td> 
+            <td>PRECIO</td> 
+            <td>STOCK</td>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let beer of cervezas">
+                <td>{{beer.name}}</td>
+                <td>{{beer.description}}</td>
+                <td>{{beer.precio | currency:'CAD'}}</td>  <!-- ejemplo de uso de pipes -->
+                <td>
+                    <span *ngIf = "beer.stock == 0"> NO HAY</span>
+                    <span *ngIf = "beer.stock != 0"> HAY</span>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
