@@ -7,6 +7,7 @@ import { BeerListComponent } from './beer-list/beer-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
+import { BreweryAboutComponent } from './brewery-about/brewery-about.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     NavComponent,
     BeerListComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    BreweryAboutComponent
   ],
   imports: [
     BrowserModule,
