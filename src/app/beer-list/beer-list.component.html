@@ -1,26 +1,42 @@
-<div class="home">
-    <h1>LISTA DE CERVEZAS</h1>
-    <table>
-        <thead>  
-            <td>NOMBRE</td> 
-            <td>TIPO</td> 
-            <td>PRECIO</td> 
-            <td>STOCK</td>
-        </thead>
-        <tbody>
-            <tr *ngFor= "let beer of cervezas">
-                <td>{{beer.name}}</td>
-                <td>{{beer.description}}</td>
-                <td>{{beer.precio | currency:'CAD'}}</td> 
-                <td>{{beer.stock}}</td>  <!-- ejemplo de uso de pipes -->
-                <td>
-                    <span *ngIf = "beer.stock == 0"> NO HAY</span>
-                    <span *ngIf = "beer.stock != 0"> HAY</span>
-                    <button (click)="masBeer(beer)">+</button>
-                    <button (click)="menosBeer(beer)">-</button>
-                </td>
-            </tr>
-        </tbody>
-
-    </table>
-</div>
+<h3 class="offset-5">LISTA DE CERVEZAS</h3>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-8">
+                    <table class="table">
+                            <thead class="thead-dark">  
+                                <tr>
+                                    <th >NOMBRE</th>
+                                    <th >TIPO</th>
+                                    <th >PRECIO</th>
+                                    <th >STOCK</th>
+                                    <th > + / -</th>
+                                    <th >IMAGEN</th>      
+                                </tr>
+                            </thead>
+                            
+                            <tbody>
+                                <tr [ngClass]="{fondo : cerveza.oferta}" *ngFor= "let cerveza of cervezas">
+                                    <td>{{cerveza.name}}</td>
+                                    <td>{{cerveza.description}}</td>
+                                    <td>{{cerveza.precio | currency:'CAD'}}</td> 
+                                    <td>
+                                        <span *ngIf = "cerveza.stock < 1"> NO HAY</span>
+                                        <span *ngIf = "cerveza.stock > 0">{{cerveza.stock}}</span>
+                                    </td>
+                                    <td>
+                                        <button (click)="masBeer(cerveza)"> + </button>
+                                        <button [disabled]="cerveza.stock <= 0" (click)="menosBeer(cerveza)"> - </button>
+                                        <input type="text" (keypress)="soloNumeros($event)" [(ngModel)]="cerveza.stock">
+                                    </td>
+                                    <td><img [src]="cerveza.imagen" alt=""></td>
+                                </tr>
+                            </tbody>
+                    
+                        </table>
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>

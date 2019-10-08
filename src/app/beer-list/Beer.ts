@@ -4,5 +4,6 @@ export class Beer{
     public precio:number;
     public imagen:string;
     public stock:number;
+    public oferta:boolean;
 }
 

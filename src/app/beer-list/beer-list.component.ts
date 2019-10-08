@@ -13,18 +13,25 @@ export class BeerListComponent implements OnInit {
   public cervezas: Beer[];
   stock: any;
 
+  public imgSource = "../../assets/img/pinta.png";
+
   constructor() { 
     // let c : Beer = this.cervezas(0);
   }
 
-  public masBeer(beer){
-    console.log(beer);
-    beer.stock++;
+  public masBeer(cerveza){
+    console.log(cerveza);
+    cerveza.stock++;
   }
 
-  public menosBeer(beer){
-    console.log(beer);
-    beer.stock--;
+  public menosBeer(cerveza){
+    console.log(cerveza);
+    cerveza.stock--;
+  }
+
+  soloNumeros($event){
+    if($event.key < "0" || $event.key > "9")
+      $event.preventDefault();
   }
 
   ngOnInit() {
