@@ -1,4 +1,28 @@
-<h1 class="nav">
-     <a [routerLink]="['./about']">1</a>
-    <a [routerLink]="['./beerlist']">2</a>
-</h1>
+<!-- <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+            <a class="navbar-brand" [routerLink]="['./beerlist']">lista de cerveza</a>
+        </li>
+        <li class="nav-item">
+            <a class="navbar-brand" [routerLink]="['./about']">about</a>
+        </li>
+    </ul>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" [routerLink]="['./beerlist']">Beers List<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="['./about']">About<span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          
+        </div>
+      </nav>

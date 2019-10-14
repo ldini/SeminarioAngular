@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { BreweryAboutComponent } from './brewery-about/brewery-about.component';
+import { BeerDataService } from './service/beer-data.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BreweryAboutComponent } from './brewery-about/brewery-about.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ BeerDataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

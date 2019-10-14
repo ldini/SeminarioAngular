@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Beer } from './Beer';
-import { BEERS } from './mocks';
+//import { Beer } from './Beer';
+//import { BEERS } from './mocks';
+import { BeerDataService } from '../service/beer-data.service';
 
 
 @Component({
@@ -10,14 +11,12 @@ import { BEERS } from './mocks';
 })
 export class BeerListComponent implements OnInit {
   
-  public cervezas: Beer[];
+  public cervezas;
   stock: any;
 
   public imgSource = "../../assets/img/pinta.png";
 
-  constructor() { 
-    // let c : Beer = this.cervezas(0);
-  }
+  constructor(private beerDataService:BeerDataService) { }
 
   public masBeer(cerveza){
     console.log(cerveza);
@@ -35,7 +34,7 @@ export class BeerListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.cervezas = BEERS;
+    this.cervezas = this.beerDataService.getBeers();
   }
 
 
